@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>כפות ואנשים – תרפיה בעזרת בעלי חיים</title>
+  <meta name="description" content="תרפיה בעזרת כלבים לילדים, מתבגרים ומבוגרים. מפגשים מותאמים-מטרה, באווירה אמפתית ובטוחה." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="img/logo.png" />
+  <meta property="og:title" content="כפות ואנשים – תרפיה בעזרת בעלי חיים" />
+  <meta property="og:description" content="מפגשים מותאמים-מטרה בעזרת בעלי חיים, לילדים, מתבגרים ומבוגרים." />
+  <meta property="og:image" content="img/hero.jpg" />
+ <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="#top" aria-label="דף הבית">
+    <img src="img/logo.png" alt="" class="brand-logo" />
+    <span class="brand-name">כפות ואנשים</span>
+  </a>
+  <button class="nav-toggle" aria-label="פתיחת תפריט">☰</button>
+  <nav class="site-nav" aria-label="ניווט ראשי">
+    <a href="#services">שירותים</a>
+    <a href="#approach">הגישה שלנו</a>
+    <a href="#pricing">מחירים</a>
+    <a href="#about">אודות</a>
+    <a href="#contact" class="btn">קבעו פגישה</a>
+  </nav>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="hero-text">
+      <h1>תרפיה בעזרת בעלי חיים שמתאימה בדיוק אליכם</h1>
+      <p>אנחנו מסייעים לילדים, מתבגרים ומבוגרים לפתח ויסות רגשי, ביטחון וקשרים משמעותיים דרך מפגשים מודרכים עם כלבי תרפיה.</p>
+      <div class="cta-row">
+        <a class="btn" href="#contact">שיחת היכרות חינם</a>
+        <a class="btn ghost" href="#services">הכירו את השירותים</a>
+      </div>
+    </div>
+    <div class="hero-media">
+      <img src="img/hero.jpg" alt="ילד מחייך לצד כלב תרפיה ידידותי" />
+    </div>
+  </section>
+
+  <section id="services" class="section">
+    <h2>שירותים</h2>
+    <div class="grid three">
+      <article class="card">
+        <h3>מפגשים אישיים</h3>
+        <p>מפגשים אחד-על-אחד המותאמים למטרות כגון ויסות רגשי, חיזוק מיומנויות חברתיות, תמיכה בטראומה ובניית ביטחון עצמי.</p>
+      </article>
+      <article class="card">
+        <h3>קבוצות קטנות</h3>
+        <p>פעילויות בקבוצה לפיתוח תקשורת, שיתוף פעולה וחוסן – במסגרת תומכת ובטוחה.</p>
+      </article>
+      <article class="card">
+        <h3>תכניות לבתי ספר ומרפאות</h3>
+        <p>הפעלת תכניות באתר הלקוח עם תכנים מותאמים וצוות מקצועי. ניתן לשלב דו"חות ומדדי התקדמות.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="approach" class="section alt">
+    <h2>הגישה שלנו</h2>
+    <ul class="bullets">
+      <li><strong>מטרות טיפוליות תחילה:</strong> בעלי החיים הם שותפים בתהליך המבוסס על התערבויות מושתתות ראיות.</li>
+      <li><strong>בטיחות ורווחת הכלב:</strong> הסמכת מובילים, רווחת הכלב ובטיחות המטופלים – סטנדרט מחייב.</li>
+      <li><strong>שותפות עם המשפחה:</strong> מטרות ברורות, מעקב התקדמות ושילוב תרגול בבית.</li>
+    </ul>
+  </section>
+
+  <section id="pricing" class="section">
+    <h2>מחירים</h2>
+    <div class="grid two">
+      <article class="card">
+        <h3>שיחת היכרות</h3>
+        <p class="price">חינם · 15–20 דקות</p>
+        <p>הבנת צרכים ומטרות. בזום או בטלפון.</p>
+      </article>
+      <article class="card">
+        <h3>מפגש סטנדרטי</h3>
+        <p class="price">₪XXX · 50 דקות</p>
+        <p>ליחיד או לזוג. חבילות בתיאום מראש.</p>
+      </article>
+    </div>
+    <p class="fineprint">* תעריפי מוסדות וחמלה זמינים לבתי ספר ולעמותות.</p>
+  </section>
+
+  <section id="about" class="section alt">
+    <h2>אודות</h2>
+    <p><strong>שמך</strong> היא/הוא כלבנית/כלבן תרפויטית/י מוסמכת/ם עם ניסיון בעבודה עם ילדים, מתבגרים ומבוגרים המתמודדים עם חרדה, טראומה ואתגרים התפתחותיים ורגשיים. המפגשים מובנים, אמפתיים וממוקדי-מטרה.</p>
+  </section>
+
+  <section id="testimonials" class="section">
+    <h2>מה הלקוחות מספרים</h2>
+    <blockquote>
+      “הילדה מחכה לכל מפגש. רואים עלייה משמעותית בביטחון העצמי וביכולת ההרגעה.”
+      <cite>— הורה לילדה בת 10</cite>
+    </blockquote>
+  </section>
+
+  <section id="contact" class="section alt">
+    <h2>יצירת קשר וקביעת פגישה</h2>
+    <p>מוזמנים לכתוב לנו או לקבוע שיחת היכרות קצרה – בשמחה נענה על כל שאלה.</p>
+    <p>
+      <a class="btn" href="mailto:info@yourdomain.com?subject=פנייה%20לטיפול">מייל: info@yourdomain.com</a>
+      <a class="btn ghost" href="https://cal.com/yourname" target="_blank" rel="noopener">קבעו שיחה</a>
+    </p>
+    <p class="fineprint">אזור פעילות: מחוז המרכז · מפגשים פרונטליים ותכניות באתר הלקוח.</p>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <p>© <span id="year"></span> כפות ואנשים. כל הזכויות שמורות.</p>
+</footer>
+
+<script>
+  // תפריט בנייד
+  const btn = document.querySelector('.nav-toggle');
+  const nav = document.querySelector('.site-nav');
+  btn.addEventListener('click', () => nav.classList.toggle('open'));
+  // שנה נוכחית
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
