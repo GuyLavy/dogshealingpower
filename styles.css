@@ -64,22 +64,21 @@ a{color:inherit}
 .grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}
 @media (max-width:900px){ .grid.two,.grid.three{grid-template-columns:1fr} }
 
-/* Carousel */
+/* --- Fade carousel (no horizontal track) --- */
 .carousel{position:relative; overflow:hidden; border-radius:var(--radius)}
-.carousel .slides{display:flex; margin:0; padding:0; list-style:none; transition:transform .5s ease}
-.carousel .slide{min-width:100%; padding:0}
-.carousel .carousel-btn{
-  position:absolute; top:50%; transform:translateY(-50%); z-index:2;
-  width:40px; height:40px; border:none; border-radius:999px;
-  background:rgba(255,255,255,.9); box-shadow:var(--shadow); cursor:pointer;
+.carousel .slides{position:relative; margin:0; padding:0; list-style:none}
+.carousel .slide{
+  position:absolute; inset:0;
+  opacity:0; pointer-events:none;
+  transition:opacity .35s ease;
 }
-.carousel .prev{right:14px}
-.carousel .next{left:14px}
-.carousel .dots{position:absolute; left:50%; transform:translateX(-50%); bottom:10px; display:flex; gap:8px}
-.carousel .dot{
-  width:10px; height:10px; border-radius:999px; border:1px solid #b6c9c0; background:#fff; opacity:.8;
+.carousel .slide.active{
+  opacity:1; pointer-events:auto; position:absolute;
 }
-.carousel .dot.active{background:var(--brand); border-color:var(--brand); opacity:1}
+/* auto-height so the container fits the active slide */
+.carousel{--h:auto}
+.carousel .slides{height:var(--h)}
+
 
 /* Dogs slide layout */
 .dog-slide{display:grid; grid-template-columns:1fr 1.1fr; gap:var(--space); align-items:center; padding:var(--space)}
@@ -104,4 +103,5 @@ blockquote cite{display:block; color:var(--muted); margin-top:6px}
 .carousel{position:relative; overflow:hidden; border-radius:var(--radius)}
 .carousel .slides{display:flex; transition:transform .5s ease; margin:0; padding:0; list-style:none}
 .carousel .slide{min-width:100%; flex:0 0 100%}
+
 
