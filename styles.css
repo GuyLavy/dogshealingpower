@@ -99,3 +99,9 @@ blockquote cite{display:block; color:var(--muted); margin-top:6px}
 }
 
 .site-footer{border-top:1px solid var(--border); text-align:center; padding:16px var(--space); color:var(--muted)}
+
+/* Safety net if CSS loads before JS */
+.carousel{position:relative; overflow:hidden; border-radius:var(--radius)}
+.carousel .slides{display:flex; transition:transform .5s ease; margin:0; padding:0; list-style:none}
+.carousel .slide{min-width:100%; flex:0 0 100%}
+
