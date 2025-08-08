@@ -64,7 +64,7 @@ a{color:inherit}
 .grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}
 @media (max-width:900px){ .grid.two,.grid.three{grid-template-columns:1fr} }
 
-/* --- Fade carousel (no horizontal track) --- */
+/* --- Fade carousel (height follows active slide) --- */
 .carousel{position:relative; overflow:hidden; border-radius:var(--radius)}
 .carousel .slides{position:relative; margin:0; padding:0; list-style:none}
 .carousel .slide{
@@ -73,11 +73,12 @@ a{color:inherit}
   transition:opacity .35s ease;
 }
 .carousel .slide.active{
-  opacity:1; pointer-events:auto; position:absolute;
+  position:relative; /* ← lets the container size to content */
+  opacity:1; pointer-events:auto;
 }
-/* auto-height so the container fits the active slide */
-.carousel{--h:auto}
-.carousel .slides{height:var(--h)}
+
+/* Images default (avoid weird cropping) */
+.carousel .slide img{width:100%; height:auto; display:block}
 
 
 /* Dogs slide layout */
@@ -103,5 +104,6 @@ blockquote cite{display:block; color:var(--muted); margin-top:6px}
 .carousel{position:relative; overflow:hidden; border-radius:var(--radius)}
 .carousel .slides{display:flex; transition:transform .5s ease; margin:0; padding:0; list-style:none}
 .carousel .slide{min-width:100%; flex:0 0 100%}
+
 
 
