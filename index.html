@@ -33,7 +33,7 @@
 
 <main id="top">
 
-  <!-- HERO — title on the right, logo below it -->
+  <!-- HERO — title on the right, logo below -->
   <section class="hero hero--stack">
     <div class="hero-col">
       <h1 class="hero-title">תרפיה בעזרת בעלי חיים</h1>
@@ -51,37 +51,35 @@
   <!-- NEWS (flyers carousel) -->
   <section id="news" class="section card">
     <h2>חדשות ועדכונים</h2>
-    <div class="carousel" data-autoplay="true" data-interval="6000">
+    <div class="carousel" data-autoplay="true" data-interval="6000" tabindex="0">
       <button class="carousel-btn prev" aria-label="הקודם">‹</button>
       <ul class="slides">
-        <!-- החלף בתמונות פליירים -->
-        <li class="slide"><img src="img/news/news1.jpg" alt="פלייר סדנת קיץ"></li>
-        <li class="slide"><img src="img/news/news2.jpg" alt="פלייר תכנית בית ספרית"></li>
-        <li class="slide"><img src="img/news/news3.jpg" alt="פלייר פעילות למשפחות"></li>
+        <li class="slide"><img src="img/news1.jpg" alt="פלייר סדנת קיץ"></li>
+        <li class="slide"><img src="img/news2.jpg" alt="פלייר תכנית בית ספרית"></li>
+        <li class="slide"><img src="img/news3.jpg" alt="פלייר פעילות למשפחות"></li>
       </ul>
       <button class="carousel-btn next" aria-label="הבא">›</button>
       <div class="dots" aria-hidden="true"></div>
     </div>
   </section>
 
-  <!-- MEET THE DOGS (carousel with image + profile text) -->
+  <!-- MEET THE DOGS (image + profile text, carousel) -->
   <section id="dogs" class="section card">
-    <h2>הכירו את הצוות</h2>
-    <div class="carousel" data-autoplay="true" data-interval="7000">
+    <h2>הכירו את הכלבים</h2>
+    <div class="carousel" data-autoplay="true" data-interval="7000" tabindex="0">
       <button class="carousel-btn prev" aria-label="הקודם">‹</button>
       <ul class="slides">
-        <!-- כל כלב = שקופית אחת; הוספה/הסרה לא שוברת עיצוב -->
         <li class="slide dog-slide">
           <img src="img/dog1.jpg" alt="בובי" class="dog-photo">
           <div class="dog-text">
-            <h3>תור</h3>
+            <h3>בובי</h3>
             <p>לברדור בן 4, רגוע ואוהב חיבוקים. מצטיין ביצירת קשר מהיר ומרגיע ילדים עם חרדה.</p>
           </div>
         </li>
         <li class="slide dog-slide">
           <img src="img/dog2.jpg" alt="לולה" class="dog-photo">
           <div class="dog-text">
-            <h3>קיארה</h3>
+            <h3>לולה</h3>
             <p>קבלירית בת 3, עדינה ואמפתית. מתאימה במיוחד למפגשים עדינים עם מתבגרים וקשישים.</p>
           </div>
         </li>
@@ -94,16 +92,13 @@
   <!-- GALLERY (image carousel) -->
   <section id="gallery" class="section card">
     <h2>גלריה</h2>
-    <div class="carousel" data-autoplay="true" data-interval="5000">
+    <div class="carousel" data-autoplay="true" data-interval="5000" tabindex="0">
       <button class="carousel-btn prev" aria-label="הקודם">‹</button>
       <ul class="slides">
-        <!-- הוסיפו/הסירו תמונות כרצונכם -->
         <li class="slide"><img src="img/gallery1.jpg" alt="מפגש תרפיה 1"></li>
         <li class="slide"><img src="img/gallery2.jpg" alt="מפגש תרפיה 2"></li>
         <li class="slide"><img src="img/gallery3.jpg" alt="מפגש תרפיה 3"></li>
         <li class="slide"><img src="img/gallery4.jpg" alt="מפגש תרפיה 4"></li>
-        <li class="slide"><img src="img/gallery5.jpg" alt="מפגש תרפיה 5></li>
-        <li class="slide"><img src="img/gallery6.jpg" alt="מפגש תרפיה 6"></li>
       </ul>
       <button class="carousel-btn next" aria-label="הבא">›</button>
       <div class="dots" aria-hidden="true"></div>
@@ -113,7 +108,7 @@
   <!-- TESTIMONIALS (quote carousel) -->
   <section id="testimonials" class="section card">
     <h2>מה הלקוחות מספרים</h2>
-    <div class="carousel" data-autoplay="true" data-interval="8000">
+    <div class="carousel" data-autoplay="true" data-interval="8000" tabindex="0">
       <button class="carousel-btn prev" aria-label="הקודם">‹</button>
       <ul class="slides">
         <li class="slide">
@@ -168,32 +163,45 @@
   // שנה נוכחית
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  // Generic carousel initializer (for any .carousel on the page)
+  // Init all carousels
   document.querySelectorAll('.carousel').forEach(setupCarousel);
 
   function setupCarousel(root){
     const track = root.querySelector('.slides');
-    const slides = Array.from(root.querySelectorAll('.slide'));
+    const slides = Array.from(track.children);
     const prev = root.querySelector('.prev');
     const next = root.querySelector('.next');
     const dots = root.querySelector('.dots');
 
-    let i = 0, timer = null;
-    let autoplay = root.dataset.autoplay === "true";
-    let interval = parseInt(root.dataset.interval || "6000", 10);
+    // --- Harden layout (prevents "stacking" bug) ---
+    track.style.display = 'flex';
+    track.style.margin = '0';
+    track.style.padding = '0';
+    track.style.listStyle = 'none';
+    track.style.transition = 'transform .5s ease';
+    slides.forEach(s => {
+      s.style.minWidth = '100%';
+      s.style.flex = '0 0 100%';
+      s.style.padding = '0';
+    });
 
     // Build dots
+    dots.innerHTML = '';
     slides.forEach((_, idx) => {
       const b = document.createElement('button');
       b.className = 'dot';
-      b.setAttribute('aria-label', 'עבור לשקופית ' + (idx+1));
+      b.setAttribute('aria-label', 'שקופית ' + (idx+1));
       b.addEventListener('click', () => go(idx));
       dots.appendChild(b);
     });
 
+    let i = 0, timer = null;
+    const autoplay = root.dataset.autoplay === 'true';
+    const interval = parseInt(root.dataset.interval || '6000', 10);
+
     function go(n){
       i = (n + slides.length) % slides.length;
-      track.style.transform = `translateX(-${i * 100}%)`;
+      track.style.transform = 'translateX(-' + (i * 100) + '%)';
       Array.from(dots.children).forEach((d, idx) => d.classList.toggle('active', idx === i));
     }
     function nextSlide(){ go(i+1); }
@@ -201,38 +209,33 @@
 
     next.addEventListener('click', nextSlide);
     prev.addEventListener('click', prevSlide);
+
+    // Keyboard
     root.addEventListener('keydown', e => {
       if(e.key === 'ArrowRight') nextSlide();
       if(e.key === 'ArrowLeft') prevSlide();
     });
 
-    // Pause on hover / focus
+    // Pause on hover/focus
+    function start(){ if(autoplay && !timer) timer = setInterval(nextSlide, interval); }
+    function stop(){ if(timer){ clearInterval(timer); timer = null; } }
     root.addEventListener('mouseenter', stop);
     root.addEventListener('mouseleave', start);
     root.addEventListener('focusin', stop);
     root.addEventListener('focusout', start);
 
-    function start(){
-      if(autoplay && !timer) timer = setInterval(nextSlide, interval);
-    }
-    function stop(){
-      if(timer){ clearInterval(timer); timer = null; }
-    }
-
-    // touch swipe (simple)
+    // Simple swipe
     let x0 = null;
     root.addEventListener('pointerdown', e => x0 = e.clientX);
     root.addEventListener('pointerup', e => {
       if(x0 == null) return;
       const dx = e.clientX - x0;
-      if(Math.abs(dx) > 40){ dx < 0 ? nextSlide() : prevSlide(); }
+      if(Math.abs(dx) > 40) (dx < 0 ? nextSlide() : prevSlide());
       x0 = null;
     });
 
-    // init
     go(0); start();
   }
 </script>
 </body>
 </html>
-
