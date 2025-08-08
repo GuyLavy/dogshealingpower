@@ -155,87 +155,84 @@
 </footer>
 
 <script>
-  // תפריט נייד
-  const navBtn = document.querySelector('.nav-toggle');
-  const nav = document.querySelector('.site-nav');
-  navBtn.addEventListener('click', () => nav.classList.toggle('open'));
-
-  // שנה נוכחית
-  document.getElementById('year').textContent = new Date().getFullYear();
-
-  // Init all carousels
+document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.carousel').forEach(setupCarousel);
+});
 
-  function setupCarousel(root){
-    const track = root.querySelector('.slides');
-    const slides = Array.from(track.children);
-    const prev = root.querySelector('.prev');
-    const next = root.querySelector('.next');
-    const dots = root.querySelector('.dots');
+function setupCarousel(root){
+  const track = root.querySelector('.slides');
+  const slides = Array.from(track.children);
+  const prev = root.querySelector('.prev');
+  const next = root.querySelector('.next');
+  const dots = root.querySelector('.dots');
 
-    // --- Harden layout (prevents "stacking" bug) ---
-    track.style.display = 'flex';
-    track.style.margin = '0';
-    track.style.padding = '0';
-    track.style.listStyle = 'none';
-    track.style.transition = 'transform .5s ease';
-    slides.forEach(s => {
-      s.style.minWidth = '100%';
-      s.style.flex = '0 0 100%';
-      s.style.padding = '0';
+  // build dots
+  dots.innerHTML = '';
+  slides.forEach((_, idx) => {
+    const b = document.createElement('button');
+    b.className = 'dot';
+    b.addEventListener('click', () => go(idx, true));
+    dots.appendChild(b);
+  });
+
+  let i = 0, timer = null;
+  const autoplay = root.dataset.autoplay === 'true';
+  const interval = parseInt(root.dataset.interval || '6000', 10);
+
+  function activate(n){
+    slides.forEach((s, k) => s.classList.toggle('active', k === n));
+    Array.from(dots.children).forEach((d, k) => d.classList.toggle('active', k === n));
+    // adjust height to active slide
+    requestAnimationFrame(() => {
+      const h = slides[n].offsetHeight || slides[n].getBoundingClientRect().height;
+      track.style.setProperty('--h', h + 'px');
+      track.style.height = h + 'px';
     });
-
-    // Build dots
-    dots.innerHTML = '';
-    slides.forEach((_, idx) => {
-      const b = document.createElement('button');
-      b.className = 'dot';
-      b.setAttribute('aria-label', 'שקופית ' + (idx+1));
-      b.addEventListener('click', () => go(idx));
-      dots.appendChild(b);
-    });
-
-    let i = 0, timer = null;
-    const autoplay = root.dataset.autoplay === 'true';
-    const interval = parseInt(root.dataset.interval || '6000', 10);
-
-    function go(n){
-      i = (n + slides.length) % slides.length;
-      track.style.transform = 'translateX(-' + (i * 100) + '%)';
-      Array.from(dots.children).forEach((d, idx) => d.classList.toggle('active', idx === i));
-    }
-    function nextSlide(){ go(i+1); }
-    function prevSlide(){ go(i-1); }
-
-    next.addEventListener('click', nextSlide);
-    prev.addEventListener('click', prevSlide);
-
-    // Keyboard
-    root.addEventListener('keydown', e => {
-      if(e.key === 'ArrowRight') nextSlide();
-      if(e.key === 'ArrowLeft') prevSlide();
-    });
-
-    // Pause on hover/focus
-    function start(){ if(autoplay && !timer) timer = setInterval(nextSlide, interval); }
-    function stop(){ if(timer){ clearInterval(timer); timer = null; } }
-    root.addEventListener('mouseenter', stop);
-    root.addEventListener('mouseleave', start);
-    root.addEventListener('focusin', stop);
-    root.addEventListener('focusout', start);
-
-    // Simple swipe
-    let x0 = null;
-    root.addEventListener('pointerdown', e => x0 = e.clientX);
-    root.addEventListener('pointerup', e => {
-      if(x0 == null) return;
-      const dx = e.clientX - x0;
-      if(Math.abs(dx) > 40) (dx < 0 ? nextSlide() : prevSlide());
-      x0 = null;
-    });
-
-    go(0); start();
   }
+  function go(n, user=false){
+    i = (n + slides.length) % slides.length;
+    activate(i);
+    if(user) restart();
+  }
+  function nextSlide(){ go(i+1); }
+  function prevSlide(){ go(i-1); }
+
+  prev.addEventListener('click', () => go(i-1, true));
+  next.addEventListener('click', () => go(i+1, true));
+
+  // pause on hover/focus
+  function start(){ if(autoplay && !timer) timer = setInterval(nextSlide, interval); }
+  function stop(){ if(timer){ clearInterval(timer); timer = null; } }
+  root.addEventListener('mouseenter', stop);
+  root.addEventListener('mouseleave', start);
+  root.addEventListener('focusin', stop);
+  root.addEventListener('focusout', start);
+
+  // swipe (simple)
+  let x0 = null;
+  root.addEventListener('pointerdown', e => x0 = e.clientX);
+  root.addEventListener('pointerup', e => {
+    if(x0 == null) return;
+    const dx = e.clientX - x0;
+    if(Math.abs(dx) > 40) (dx < 0 ? nextSlide() : prevSlide());
+    x0 = null;
+  });
+
+  function restart(){ stop(); start(); }
+
+  // init after images load (so height is right)
+  const imgs = root.querySelectorAll('img');
+  let pending = imgs.length;
+  if(pending){
+    imgs.forEach(img => {
+      if(img.complete){ if(--pending===0) init(); }
+      else img.addEventListener('load', () => { if(--pending===0) init(); }, {once:true});
+    });
+  } else init();
+
+  function init(){ activate(0); start(); }
+}
 </script>
 </body>
 </html>
+
