@@ -76,6 +76,39 @@ a{color:inherit}
   position:relative; /* ← lets the container size to content */
   opacity:1; pointer-events:auto;
 }
+/* Modern circular arrow buttons */
+.carousel .carousel-btn{
+  position:absolute; top:50%; transform:translateY(-50%);
+  z-index:2; width:44px; height:44px; border:1px solid var(--border);
+  border-radius:999px; background:#fff; box-shadow:var(--shadow);
+  display:grid; place-items:center; cursor:pointer; transition:background .2s ease, border-color .2s ease, transform .2s ease;
+}
+.carousel .prev{ right:12px; }
+.carousel .next{ left:12px; }
+
+.carousel .carousel-btn svg{
+  width:22px; height:22px; fill:none; stroke:var(--ink);
+  stroke-width:2.5; stroke-linecap:round; stroke-linejoin:round;
+  transition:transform .15s ease, stroke .2s ease;
+}
+
+/* hover/focus states */
+.carousel .carousel-btn:hover,
+.carousel .carousel-btn:focus-visible{
+  background:var(--brand); border-color:var(--brand);
+}
+.carousel .carousel-btn:hover svg,
+.carousel .carousel-btn:focus-visible svg{
+  stroke:#fff;
+}
+.carousel .prev:hover svg{ transform:translateX(-1px); }
+.carousel .next:hover svg{ transform:translateX(1px); }
+
+/* bigger touch targets on mobile if you want */
+@media (max-width:860px){
+  .carousel .carousel-btn{ width:52px; height:52px; }
+  .carousel .carousel-btn svg{ width:24px; height:24px; }
+}
 
 /* Images default (avoid weird cropping) */
 .carousel .slide img{width:100%; height:auto; display:block}
@@ -104,6 +137,7 @@ blockquote cite{display:block; color:var(--muted); margin-top:6px}
 .carousel{position:relative; overflow:hidden; border-radius:var(--radius)}
 .carousel .slides{display:flex; transition:transform .5s ease; margin:0; padding:0; list-style:none}
 .carousel .slide{min-width:100%; flex:0 0 100%}
+
 
 
 
