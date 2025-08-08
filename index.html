@@ -182,13 +182,15 @@ function setupCarousel(root){
   function activate(n){
     slides.forEach((s, k) => s.classList.toggle('active', k === n));
     Array.from(dots.children).forEach((d, k) => d.classList.toggle('active', k === n));
-    // adjust height to active slide
-    requestAnimationFrame(() => {
-      const h = slides[n].offsetHeight || slides[n].getBoundingClientRect().height;
-      track.style.setProperty('--h', h + 'px');
-      track.style.height = h + 'px';
-    });
+    // measure after layout settles
+    requestAnimationFrame(measure);
   }
+
+  function measure(){
+    const h = slides[i].offsetHeight || slides[i].scrollHeight || 0;
+    track.style.height = h + 'px';
+  }
+
   function go(n, user=false){
     i = (n + slides.length) % slides.length;
     activate(i);
@@ -231,8 +233,15 @@ function setupCarousel(root){
   } else init();
 
   function init(){ activate(0); start(); }
+  
+  window.addEventListener('resize', measure);
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(measure).catch(()=>{});
+  }
 }
+  
 </script>
 </body>
 </html>
+
 
