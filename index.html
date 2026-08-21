@@ -1,292 +1,536 @@
 <!doctype html>
 <html lang="he" dir="rtl">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#2f6b57">
+
   <title>צליל לביא - כלבנית טיפולית</title>
+  <meta
+    name="description"
+    content="טיפול בעזרת בעלי חיים לילדים, מתבגרים ומבוגרים, בגישה רגישה, בטוחה ומותאמת אישית."
+  >
 
-  <meta name="description" content="תרפיה בעזרת כלבים לילדים, מתבגרים ומבוגרים. מפגשים אמפתיים, בטוחים וממוקדי-מטרה." />
-  <meta property="og:title" content="צליל לביא - כלבנית טיפולית" />
-  <meta property="og:description" content="מפגשים מותאמים-מטרה בעזרת כלבי תרפיה." />
-  <meta property="og:image" content="img/logo.png" />
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="he_IL">
+  <meta property="og:title" content="צליל לביא - כלבנית טיפולית">
+  <meta
+    property="og:description"
+    content="מפגשים טיפוליים בעזרת בעלי חיים, בהתאמה אישית ובסביבה תומכת."
+  >
+  <meta property="og:image" content="img/logo.png">
 
-  <link rel="icon" href="img/logo.png" />
-  <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="img/logo.png">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
+
 <body>
+  <a class="skip-link" href="#main-content">דלגו לתוכן הראשי</a>
 
-<header class="site-header">
-  <a class="brand" href="#top" aria-label="דף הבית">
-    <span class="brand-name">צליל לביא</span>
-  </a>
-  <button class="nav-toggle" aria-label="פתיחת תפריט">☰</button>
-  <nav class="site-nav" aria-label="ניווט ראשי">
-    <a href="#about">אודות</a>
-    <a href="#news">חדשות</a>
-    <a href="#dogs">הכירו את הצוות</a>
-    <a href="#gallery">גלריה</a>
-    <a href="#testimonials">לקוחות מספרים</a>
-    <a class="btn" href="#contact">צור קשר</a>
-  </nav>
-</header>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#top" aria-label="דף הבית">
+        <span class="brand-name">צליל לביא</span>
+      </a>
 
-<main id="top">
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-label="פתיחת תפריט"
+        aria-expanded="false"
+        aria-controls="primary-navigation"
+      >
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </button>
 
-  <!-- HERO — title on the right, logo below -->
-  <section class="hero hero--stack">
-    <div class="hero-col">
-      <h1 class="hero-title">צליל לביא - כלבנית טיפולית</h1>
-      <img src="img/logo.png" alt="לוגו צליל לביא" class="hero-logo">
-      <p class="hero-sub">באהבה, ברגישות ובמקצועיות – לילדים, מתבגרים ומבוגרים</p>
+      <nav id="primary-navigation" class="site-nav" aria-label="ניווט ראשי">
+        <a href="#about">אודות</a>
+        <a href="#news">חדשות</a>
+        <a href="#dogs">הכירו את הכלבים</a>
+        <a href="#gallery">גלריה</a>
+        <a href="#testimonials">לקוחות מספרים</a>
+        <a class="button button-small" href="#contact">יצירת קשר</a>
+      </nav>
     </div>
-  </section>
+  </header>
 
-  <!-- ABOUT -->
-  <section id="about" class="section alt card">
-    <h2>מהי כלבנות טיפולית?</h2>
-    <p>הנוכחות של כלבים בטיפול פותחת את הלב ומאפשרת תהליך רגשי עדין, חווייתי ובגובה העיניים. הקשר עם הכלב מלמד אמפתיה, גבולות, ויסות, התחשבות והתבוננות. בעזרת הנוכחות השקטה של הכלב הבנות מצליחות להביא את עצמן בחופשיות ולהרגיש שהן נמצאות במרחב בטוח ולא שיפוטי . בכל מפגש יש שילוב בין עבודה קבוצתית, משחקים רגשיים, פעילות עם הכלבים וזמן אישי של שיח והקשבה. </p>
-  </section>
+  <main id="main-content">
+    <section id="top" class="hero section-shell" aria-labelledby="hero-title">
+      <div class="hero-content">
+        <p class="eyebrow">טיפול בעזרת בעלי חיים</p>
+        <h1 id="hero-title">מרחב בטוח ליצירת קשר, ביטחון וצמיחה</h1>
 
-    <!-- ABOUT_2 -->
-  <section id="about2" class="section alt card">
-    <h2>אודות</h2>
-    <p>צליל לביא - כלבנית טיפולית מוסמכת ובעלת תואר ראשון בעבודה סוציאלית. בשנים האחרונות הנחתה מספר קבוצות טיפוליות לילדים בדרום הארץ, תוך שילוב של כלבים טיפוליים בתהליך הרגשי. צליל מביאה איתה חום, רוגע ויכולת טבעית לייצר חיבורים - בין ילדים לעצמם, לאחרים ולעולם שסביבם. הכלבים הטיפוליים שאיתה הם חלק בלתי נפרד מהמפגש ומהווים גשר לקשר, מקור לביטחון ולביטוי רגשי. </p>
-  </section>
+        <img
+          class="hero-logo"
+          src="img/logo.png"
+          alt="לוגו"
+          fetchpriority="high"
+        >
 
-  <!-- NEWS (flyers carousel) -->
-  <section id="news" class="section card">
-    <h2>חדשות ועדכונים</h2>
-    <div class="carousel" data-autoplay="true" data-interval="6000" tabindex="0">
-      <button class="carousel-btn prev" aria-label="הקודם" type="button">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M15 6l-6 6 6 6"/>
-        </svg>
-      </button>
-      <ul class="slides">
-        <li class="slide"><img src="img/news1.png" alt="פלייר סדנת קיץ"></li>
-        <li class="slide"><img src="img/news2.png" alt="פלייר תכנית בית ספרית"></li>
-        <li class="slide"><img src="img/news3.png" alt="פלייר פעילות למשפחות"></li>
-        <li class="slide"><img src="img/news4.jpg" alt="פלייר פעילות למשפחות"></li>
-      </ul>
-      <button class="carousel-btn next" aria-label="הבא" type="button">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M9 6l6 6-6 6"/>
-        </svg>
-      </button>
-      <div class="dots" aria-hidden="true"></div>
+        <p class="hero-text">
+          מפגשים מותאמים לילדים, מתבגרים ומבוגרים, בגישה מקצועית,
+          רגישה ומכבדת את צורכי המשתתפים ואת רווחת בעלי החיים.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button" href="#contact">לתיאום שיחת היכרות</a>
+          <a class="button button-secondary" href="#about">מידע נוסף</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="content-section section-shell" aria-labelledby="about-title">
+      <div class="section-card about-card">
+        <div>
+          <p class="eyebrow">מי אנחנו</p>
+          <h2 id="about-title">אודות</h2>
+        </div>
+
+        <div class="prose">
+          <p>
+            <strong>צליל לביא</strong> מציעה תהליכים ומפגשים בעזרת בעלי חיים,
+            המותאמים למטרות, לגיל ולצרכים האישיים של כל משתתף.
+          </p>
+          <p>
+            העבודה משלבת קשר עם בעלי החיים, פעילות מובנית ושיח בגובה העיניים,
+            תוך הקפדה על בטיחות, רגישות ורווחת בעלי החיים.
+          </p>
+          <p class="placeholder-note">
+            צליל לביא - כלבנית טיפולית מוסמכת ובעלת תואר ראשון בעבודה סוציאלית. בשנים האחרונות הנחתה מספר קבוצות טיפוליות לילדים בדרום הארץ, תוך שילוב של כלבים טיפוליים בתהליך הרגשי. צליל מביאה איתה חום, רוגע ויכולת טבעית לייצר חיבורים - בין ילדים לעצמם, לאחרים ולעולם שסביבם. הכלבים הטיפוליים שאיתה הם חלק בלתי נפרד מהמפגש ומהווים גשר לקשר, מקור לביטחון ולביטוי רגשי. 
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="news" class="content-section section-shell" aria-labelledby="news-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">מה חדש</p>
+          <h2 id="news-title">חדשות ועדכונים</h2>
+        </div>
+        <p>פליירים, פעילויות קרובות ועדכונים מהעסק.</p>
+      </div>
+
+      <div
+        class="carousel section-card"
+        data-carousel
+        data-autoplay="true"
+        data-interval="6500"
+        role="region"
+        aria-roledescription="carousel"
+        aria-label="חדשות ועדכונים"
+      >
+        <div class="carousel-viewport">
+          <ul class="carousel-track">
+            <li class="carousel-slide is-active" data-slide>
+              <figure class="media-frame flyer-frame">
+                <img
+                  src="img/news1.jpg"
+                  alt="פלייר לעדכון הראשון"
+                  loading="lazy"
+                  decoding="async"
+                >
+                <figcaption>כותרת קצרה לעדכון הראשון</figcaption>
+              </figure>
+            </li>
+
+            <li class="carousel-slide" data-slide>
+              <figure class="media-frame flyer-frame">
+                <img
+                  src="img/news2.jpg"
+                  alt="פלייר לעדכון השני"
+                  loading="lazy"
+                  decoding="async"
+                >
+                <figcaption>כותרת קצרה לעדכון השני</figcaption>
+              </figure>
+            </li>
+
+            <li class="carousel-slide" data-slide>
+              <figure class="media-frame flyer-frame">
+                <img
+                  src="img/news3.jpg"
+                  alt="פלייר לעדכון השלישי"
+                  loading="lazy"
+                  decoding="async"
+                >
+                <figcaption>כותרת קצרה לעדכון השלישי</figcaption>
+              </figure>
+            </li>
+          </ul>
+        </div>
+
+        <div class="carousel-controls">
+          <button class="carousel-control" type="button" data-prev aria-label="העדכון הקודם">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M9 18l6-6-6-6"></path>
+            </svg>
+          </button>
+
+          <div class="carousel-dots" data-dots aria-label="בחירת עדכון"></div>
+
+          <button
+            class="carousel-control carousel-toggle"
+            type="button"
+            data-toggle
+            aria-label="עצירת ההחלפה האוטומטית"
+          >
+            <svg class="pause-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M9 6v12M15 6v12"></path>
+            </svg>
+            <svg class="play-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M9 6l9 6-9 6z"></path>
+            </svg>
+          </button>
+
+          <button class="carousel-control" type="button" data-next aria-label="העדכון הבא">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M15 18l-6-6 6-6"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section id="dogs" class="content-section section-shell" aria-labelledby="dogs-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">הצוות על ארבע</p>
+          <h2 id="dogs-title">הכירו את הכלבים</h2>
+        </div>
+        <p>הוספה או הסרה של כלבים לא תשנה את מבנה הקרוסלה.</p>
+      </div>
+
+      <div
+        class="carousel section-card"
+        data-carousel
+        data-autoplay="true"
+        data-interval="7500"
+        role="region"
+        aria-roledescription="carousel"
+        aria-label="הכירו את הכלבים"
+      >
+        <div class="carousel-viewport">
+          <ul class="carousel-track">
+            <li class="carousel-slide is-active" data-slide>
+              <article class="dog-profile">
+                <img
+                  class="dog-photo"
+                  src="img/dog1.jpg"
+                  alt="שם הכלב הראשון"
+                  loading="lazy"
+                  decoding="async"
+                >
+                <div class="dog-copy">
+                  <p class="eyebrow">כלב טיפולי</p>
+                  <h3>תור</h3>
+                  <p>
+                    תור הוא רועה גרמני מעורב בן 7. אוהב לשחק בכדורים, לרוץ ולישון. תור הוא כלב רגיש וקשוב, אך כמו כולנו לפעמים הוא צריך קצת מרחב לעצמו
+                  </p>
+                </div>
+              </article>
+            </li>
+
+            <li class="carousel-slide" data-slide>
+              <article class="dog-profile">
+                <img
+                  class="dog-photo"
+                  src="img/dog2.jpg"
+                  alt="שם הכלב השני"
+                  loading="lazy"
+                  decoding="async"
+                >
+                <div class="dog-copy">
+                  <p class="eyebrow">כלב טיפולי</p>
+                  <h3>קיארה</h3>
+                  <p>
+                    קיארה היא כלבת פומרניאן בת שנה, מתמסרת בקלות ואוהבת כל אחד
+                  </p>
+                </div>
+              </article>
+            </li>
+          </ul>
+        </div>
+
+        <div class="carousel-controls">
+          <button class="carousel-control" type="button" data-prev aria-label="הכלב הקודם">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M9 18l6-6-6-6"></path>
+            </svg>
+          </button>
+
+          <div class="carousel-dots" data-dots aria-label="בחירת כלב"></div>
+
+          <button
+            class="carousel-control carousel-toggle"
+            type="button"
+            data-toggle
+            aria-label="עצירת ההחלפה האוטומטית"
+          >
+            <svg class="pause-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M9 6v12M15 6v12"></path>
+            </svg>
+            <svg class="play-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M9 6l9 6-9 6z"></path>
+            </svg>
+          </button>
+
+          <button class="carousel-control" type="button" data-next aria-label="הכלב הבא">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M15 18l-6-6 6-6"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery" class="content-section section-shell" aria-labelledby="gallery-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">רגעים מהפעילות</p>
+          <h2 id="gallery-title">גלריה</h2>
+        </div>
+        <p>השתמשו רק בתמונות שקיבלתם אישור מפורש לפרסם.</p>
+      </div>
+
+      <div
+        class="carousel section-card"
+        data-carousel
+        data-autoplay="true"
+        data-interval="6000"
+        role="region"
+        aria-roledescription="carousel"
+        aria-label="גלריית תמונות"
+      >
+        <div class="carousel-viewport">
+          <ul class="carousel-track">
+            <li class="carousel-slide is-active" data-slide>
+              <figure class="media-frame gallery-frame">
+                <img
+                  src="img/gallery1.jpg"
+                  alt="תיאור ענייני של התמונה הראשונה בגלריה"
+                  loading="lazy"
+                  decoding="async"
+                >
+              </figure>
+            </li>
+
+            <li class="carousel-slide" data-slide>
+              <figure class="media-frame gallery-frame">
+                <img
+                  src="img/gallery2.jpg"
+                  alt="תיאור ענייני של התמונה השנייה בגלריה"
+                  loading="lazy"
+                  decoding="async"
+                >
+              </figure>
+            </li>
+
+            <li class="carousel-slide" data-slide>
+              <figure class="media-frame gallery-frame">
+                <img
+                  src="img/gallery3.jpg"
+                  alt="תיאור ענייני של התמונה השלישית בגלריה"
+                  loading="lazy"
+                  decoding="async"
+                >
+              </figure>
+            </li>
+
+            <li class="carousel-slide" data-slide>
+              <figure class="media-frame gallery-frame">
+                <img
+                  src="img/gallery4.jpg"
+                  alt="תיאור ענייני של התמונה הרביעית בגלריה"
+                  loading="lazy"
+                  decoding="async"
+                >
+              </figure>
+            </li>
+          </ul>
+        </div>
+
+        <div class="carousel-controls">
+          <button class="carousel-control" type="button" data-prev aria-label="התמונה הקודמת">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M9 18l6-6-6-6"></path>
+            </svg>
+          </button>
+
+          <div class="carousel-dots" data-dots aria-label="בחירת תמונה"></div>
+
+          <button
+            class="carousel-control carousel-toggle"
+            type="button"
+            data-toggle
+            aria-label="עצירת ההחלפה האוטומטית"
+          >
+            <svg class="pause-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M9 6v12M15 6v12"></path>
+            </svg>
+            <svg class="play-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M9 6l9 6-9 6z"></path>
+            </svg>
+          </button>
+
+          <button class="carousel-control" type="button" data-next aria-label="התמונה הבאה">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M15 18l-6-6 6-6"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="testimonials"
+      class="content-section section-shell"
+      aria-labelledby="testimonials-title"
+    >
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">חוויות מהדרך</p>
+          <h2 id="testimonials-title">מה הלקוחות מספרים</h2>
+        </div>
+        <p>פרסמו רק משובים אמיתיים ובאישור הכותבים.</p>
+      </div>
+
+      <div
+        class="carousel section-card testimonial-carousel"
+        data-carousel
+        data-autoplay="true"
+        data-interval="8500"
+        role="region"
+        aria-roledescription="carousel"
+        aria-label="משובי לקוחות"
+      >
+        <div class="carousel-viewport">
+          <ul class="carousel-track">
+            <li class="carousel-slide is-active" data-slide>
+              <blockquote class="testimonial">
+                <p>
+                  כאן יופיע ציטוט אמיתי וקצר של לקוח או הורה, לאחר קבלת אישור לפרסום.
+                </p>
+                <footer>שם פרטי או תיאור אנונימי מוסכם</footer>
+              </blockquote>
+            </li>
+
+            <li class="carousel-slide" data-slide>
+              <blockquote class="testimonial">
+                <p>
+                  מומלץ לבחור משוב שמתאר את החוויה והתהליך, בלי לטעון להבטחת תוצאה.
+                </p>
+                <footer>לקוח או הורה, באישור</footer>
+              </blockquote>
+            </li>
+
+            <li class="carousel-slide" data-slide>
+              <blockquote class="testimonial">
+                <p>
+                  אפשר להוסיף או להסיר שקופיות בלי לשנות את קוד הקרוסלה.
+                </p>
+                <footer>טקסט זמני לעריכה</footer>
+              </blockquote>
+            </li>
+          </ul>
+        </div>
+
+        <div class="carousel-controls">
+          <button class="carousel-control" type="button" data-prev aria-label="המשוב הקודם">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M9 18l6-6-6-6"></path>
+            </svg>
+          </button>
+
+          <div class="carousel-dots" data-dots aria-label="בחירת משוב"></div>
+
+          <button
+            class="carousel-control carousel-toggle"
+            type="button"
+            data-toggle
+            aria-label="עצירת ההחלפה האוטומטית"
+          >
+            <svg class="pause-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M9 6v12M15 6v12"></path>
+            </svg>
+            <svg class="play-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M9 6l9 6-9 6z"></path>
+            </svg>
+          </button>
+
+          <button class="carousel-control" type="button" data-next aria-label="המשוב הבא">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M15 18l-6-6 6-6"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="content-section section-shell" aria-labelledby="contact-title">
+      <div class="section-card contact-section">
+        <div>
+          <p class="eyebrow">נשמח לשמוע מכם</p>
+          <h2 id="contact-title">יצירת קשר</h2>
+          <p>
+            החליפו את פרטי הדוגמה בפרטים האמיתיים. מומלץ להשאיר לפחות
+            טלפון, דוא"ל ודרך אחת ליצירת קשר מהירה.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <a class="contact-link" href="tel:+972500000000">
+            <span class="contact-label">טלפון</span>
+            <span dir="ltr">050-000-0000</span>
+          </a>
+
+          <a class="contact-link" href="mailto:info@example.com">
+            <span class="contact-label">דוא"ל</span>
+            <span dir="ltr">info@example.com</span>
+          </a>
+
+          <a
+            class="contact-link"
+            href="https://wa.me/972500000000"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="contact-label">WhatsApp</span>
+            <span>שליחת הודעה</span>
+          </a>
+
+          <a
+            class="contact-link"
+            href="https://www.instagram.com/yourhandle"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="contact-label">Instagram</span>
+            <span>@yourhandle</span>
+          </a>
+
+          <a
+            class="contact-link"
+            href="https://www.facebook.com/yourpage"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="contact-label">Facebook</span>
+            <span>לעמוד העסקי</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p>© <span id="year"></span> צליל לביא. כל הזכויות שמורות.</p>
+      <a href="#top">חזרה לראש העמוד</a>
     </div>
-  </section>
-
-  <!-- MEET THE DOGS (image + profile text, carousel) -->
-  <section id="dogs" class="section card">
-    <h2>הכירו את הצוות</h2>
-    <div class="carousel" data-autoplay="true" data-interval="7000" tabindex="0">
-      <button class="carousel-btn prev" aria-label="הקודם" type="button">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M15 6l-6 6 6 6"/>
-        </svg> 
-      </button>
-      <ul class="slides">
-        <li class="slide dog-slide">
-          <img src="img/dog1.jpg" alt="בובי" class="dog-photo">
-          <div class="dog-text">
-            <h3>תור</h3>
-            <p>תור הוא רועה גרמני מעורב בן 7. אוהב לשחק בכדורים, לרוץ ולישון. תור הוא כלב רגיש וקשוב, אך כמו כולנו לפעמים הוא צריך קצת מרחב לעצמו. </p>
-          </div>
-        </li>
-        <li class="slide dog-slide">
-          <img src="img/dog2.jpg" alt="לולה" class="dog-photo">
-          <div class="dog-text">
-            <h3>קיארה</h3>
-            <p>קיארה היא כלבת פומרניאן בת שנה, מתמסרת בקלות ואוהבת כל אחד.</p>
-          </div>
-        </li>
-      </ul>
-      <button class="carousel-btn next" aria-label="הבא" type="button">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M9 6l6 6-6 6"/>
-        </svg>
-      </button>
-      <div class="dots" aria-hidden="true"></div>
-    </div>
-  </section>
-
-  <!-- GALLERY (image carousel) -->
-  <section id="gallery" class="section card">
-    <h2>גלריה</h2>
-    <div class="carousel" data-autoplay="true" data-interval="5000" tabindex="0">
-      <button class="carousel-btn prev" aria-label="הקודם" type="button">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M15 6l-6 6 6 6"/>
-        </svg>
-      </button>
-      <ul class="slides">
-        <li class="slide"><img src="img/gallery1.jpg" alt="מפגש תרפיה 1"></li>
-        <li class="slide"><img src="img/gallery2.jpg" alt="מפגש תרפיה 2"></li>
-        <li class="slide"><img src="img/gallery3.jpg" alt="מפגש תרפיה 3"></li>
-        <li class="slide"><img src="img/gallery4.jpg" alt="מפגש תרפיה 4"></li>
-        <li class="slide"><img src="img/gallery5.jpg" alt="מפגש תרפיה 5"></li>
-        <li class="slide"><img src="img/gallery6.jpg" alt="מפגש תרפיה 6"></li>
-      </ul>
-      <button class="carousel-btn next" aria-label="הבא" type="button">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M9 6l6 6-6 6"/>
-        </svg>
-      </button>
-      <div class="dots" aria-hidden="true"></div>
-    </div>
-  </section>
-
-  <!-- TESTIMONIALS (quote carousel) -->
-  <section id="testimonials" class="section card">
-    <h2>מה הלקוחות מספרים</h2>
-    <div class="carousel" data-autoplay="true" data-interval="8000" tabindex="0">
-      <button class="carousel-btn prev" aria-label="הקודם" type="button">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M15 6l-6 6 6 6"/>
-        </svg>
-      </button>
-      <ul class="slides">
-        <li class="slide">
-          <blockquote>
-            “הילדה מחכה לכל מפגש. רואים עלייה משמעותית בביטחון העצמי וביכולת ההרגעה.”
-            <cite>— הורה לילדה בת 10</cite>
-          </blockquote>
-        </li>
-        <li class="slide">
-          <blockquote>
-            “הטיפול פתח לנו ערוץ תקשורת חדש בבית. הכלבים עושים את הבלתי אפשרי.”
-            <cite>— אם לנער בן 12</cite>
-          </blockquote>
-        </li>
-        <li class="slide">
-          <blockquote>
-            “התהליך היה מקצועי ונעים. ראינו שיפור מדיד ביעדים שהגדרנו.”
-            <cite>— מטופלת בת 45</cite>
-          </blockquote>
-        </li>
-      </ul>
-      <button class="carousel-btn next" aria-label="הבא" type="button">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M9 6l6 6-6 6"/>
-        </svg>
-      </button>
-      <div class="dots" aria-hidden="true"></div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="section alt card">
-    <h2>צור קשר</h2>
-    <div class="contact-cards">
-      <a class="chip" href="tel:052-2626772">📞 052-262-6772</a>
-      <a class="chip" href="mailto:info@yourdomain.com">✉️ info@yourdomain.com</a>
-      <a class="chip" href="https://wa.me/972545610656" target="_blank" rel="noopener">💬 WhatsApp</a>
-      <a class="chip" href="https://instagram.com/yourhandle" target="_blank" rel="noopener">📷 Instagram</a>
-      <a class="chip" href="https://www.facebook.com/people/Tzlil-Lavy/pfbid0L3PzLEVanpLc5Cnqv3cfayAjVvEpM9thZFfTVWsTBr72P2bG5Qxs3soLdHTQ8uKxl/" target="_blank" rel="noopener">📘 Facebook</a>
-    </div>
-    <p class="fineprint">נשמח לענות על כל שאלה ולתאם שיחת היכרות קצרה.</p>
-  </section>
-
-</main>
-
-<footer class="site-footer">
-  <p>© <span id="year"></span> צליל לביא. כל הזכויות שמורות.</p>
-</footer>
-
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.carousel').forEach(setupCarousel);
-});
-
-function setupCarousel(root){
-  const track = root.querySelector('.slides');
-  const slides = Array.from(track.children);
-  const prev = root.querySelector('.prev');
-  const next = root.querySelector('.next');
-  const dots = root.querySelector('.dots');
-
-  // build dots
-  dots.innerHTML = '';
-  slides.forEach((_, idx) => {
-    const b = document.createElement('button');
-    b.className = 'dot';
-    b.addEventListener('click', () => go(idx, true));
-    dots.appendChild(b);
-  });
-
-  let i = 0, timer = null;
-  const autoplay = root.dataset.autoplay === 'true';
-  const interval = parseInt(root.dataset.interval || '6000', 10);
-
-  function activate(n){
-    slides.forEach((s, k) => s.classList.toggle('active', k === n));
-    Array.from(dots.children).forEach((d, k) => d.classList.toggle('active', k === n));
-    // measure after layout settles
-    requestAnimationFrame(measure);
-  }
-
-  function measure(){
-    const h = slides[i].offsetHeight || slides[i].scrollHeight || 0;
-    track.style.height = h + 'px';
-  }
-
-  function go(n, user=false){
-    i = (n + slides.length) % slides.length;
-    activate(i);
-    if(user) restart();
-  }
-  function nextSlide(){ go(i+1); }
-  function prevSlide(){ go(i-1); }
-
-  prev.addEventListener('click', () => go(i-1, true));
-  next.addEventListener('click', () => go(i+1, true));
-
-  // pause on hover/focus
-  function start(){ if(autoplay && !timer) timer = setInterval(nextSlide, interval); }
-  function stop(){ if(timer){ clearInterval(timer); timer = null; } }
-  root.addEventListener('mouseenter', stop);
-  root.addEventListener('mouseleave', start);
-  root.addEventListener('focusin', stop);
-  root.addEventListener('focusout', start);
-
-  // swipe (simple)
-  let x0 = null;
-  root.addEventListener('pointerdown', e => x0 = e.clientX);
-  root.addEventListener('pointerup', e => {
-    if(x0 == null) return;
-    const dx = e.clientX - x0;
-    if(Math.abs(dx) > 40) (dx < 0 ? nextSlide() : prevSlide());
-    x0 = null;
-  });
-
-  function restart(){ stop(); start(); }
-
-  // init after images load (so height is right)
-  const imgs = root.querySelectorAll('img');
-  let pending = imgs.length;
-  if(pending){
-    imgs.forEach(img => {
-      if(img.complete){ if(--pending===0) init(); }
-      else img.addEventListener('load', () => { if(--pending===0) init(); }, {once:true});
-    });
-  } else init();
-
-  function init(){ activate(0); start(); }
-  
-  window.addEventListener('resize', measure);
-  if (document.fonts && document.fonts.ready) {
-    document.fonts.ready.then(measure).catch(()=>{});
-  }
-}
-  
-</script>
+  </footer>
 </body>
 </html>
-
-
-
-
-
-
